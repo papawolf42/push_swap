@@ -17,7 +17,12 @@
 
 # define ERR_BAD_NUMBER "found not a number"
 # define ERR_MALLOC_FAIL "allocating memory fails"
+# define ERR_NUMBER_DUPLICATE "numbers are duplicated"
 
 t_bool			ft_error_msg(char *msg);
 
+t_bool			ft_destroy_splits(char **strs);
+t_bool			ft_destroy_array(int *array);
+
 #endif
+
