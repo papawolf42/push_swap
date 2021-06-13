@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-typedef struct s_pool		t_pool;
+typedef struct s_ctrl		t_ctrl;
 typedef struct s_stack		t_stack;
 typedef struct s_node		t_node;
 
@@ -34,10 +34,13 @@ struct			s_stack
 	size_t		len;
 };
 
-struct			s_pool
+struct			s_ctrl
 {
 	t_stack		a;
 	t_stack		b;
+	size_t		len;
+	size_t		alen;
+	size_t		blen;
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/06 15:50:17 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/10 21:53:11 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ SRCS_CONSOLE := $(addprefix $(DIR_SRC_CONSOLE)/, \
 
 DIR_SRC_ERROR := error
 SRCS_ERROR := $(addprefix $(DIR_SRC_ERROR)/, \
+	ft_destroy_array.c \
 	ft_destroy_splits.c \
 	ft_error_msg.c \
 )
