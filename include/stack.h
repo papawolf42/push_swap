@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structure.h                                        :+:      :+:    :+:   */
+/*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/14 22:25:31 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/14 22:14:07 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/15 14:07:20 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTURE_H
-# define STRUCTURE_H
+#ifndef STACK_H
+# define STACK_H
 
-# include <stddef.h>
+# include "structure.h"
 
-typedef struct s_ctrl		t_ctrl;
-typedef struct s_stack		t_stack;
-typedef struct s_node		t_node;
-
-struct			s_node
-{
-	int			value;
-	size_t		index;
-	t_node		*next;
-	t_node		*before;
-};
-
-struct			s_stack
-{
-	t_node		*head;
-	t_node		*tail;
-	size_t		len;
-};
-
-struct			s_ctrl
-{
-	t_stack		a;
-	t_stack		b;
-	size_t		len;
-};
+t_node	*ft_node_new(int value, size_t index);
+void    ft_stack_addback(t_stack *stack, t_node *node);
 
 #endif

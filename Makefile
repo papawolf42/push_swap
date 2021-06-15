@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/10 21:53:11 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/15 14:01:57 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,10 +88,17 @@ DIR_SRC_PREPROCESS := preprocess
 SRCS_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 	$(SRCS_VALIDATE) \
 	ft_atoi_array.c \
+	ft_init_stack.c \
 	ft_merge_sort_array.c \
 	ft_parse_string.c \
 	ft_preprocess.c \
 	ft_strslen.c \
+)
+
+DIR_SRC_STACK := stack
+SRCS_STACK := $(addprefix $(DIR_SRC_STACK)/, \
+	ft_node_new.c \
+	ft_stack_addback.c \
 )
 
 SRCS := $(addprefix $(DIR_SRC)/, \
@@ -101,6 +108,7 @@ SRCS := $(addprefix $(DIR_SRC)/, \
 	$(SRCS_CONSOLE) \
 	$(SRCS_ERROR) \
 	$(SRCS_PREPROCESS) \
+	$(SRCS_STACK) \
 )
 
 # =========================
@@ -112,7 +120,8 @@ vpath %.c \
 	$(DIR_SRC)/$(DIR_SRC_CONSOLE) \
 	$(DIR_SRC)/$(DIR_SRC_ERROR) \
 	$(DIR_SRC)/$(DIR_SRC_PREPROCESS) \
-	$(DIR_SRC)/$(DIR_SRC_PREPROCESS)/$(DIR_SRC_VALIDATE)
+	$(DIR_SRC)/$(DIR_SRC_PREPROCESS)/$(DIR_SRC_VALIDATE) \
+	$(DIR_SRC)/$(DIR_SRC_STACK)
 
 # =========================
 # object files

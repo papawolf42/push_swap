@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structure.h                                        :+:      :+:    :+:   */
+/*   ft_node_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/14 22:25:31 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/14 22:13:50 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/15 14:07:20 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTURE_H
-# define STRUCTURE_H
+#include <stdlib.h>
+#include "bool.h"
+#include "structure.h"
 
-# include <stddef.h>
-
-typedef struct s_ctrl		t_ctrl;
-typedef struct s_stack		t_stack;
-typedef struct s_node		t_node;
-
-struct			s_node
+t_node	*ft_node_new(int value, size_t index)
 {
-	int			value;
-	size_t		index;
-	t_node		*next;
-	t_node		*before;
-};
+	t_node	*node;
 
-struct			s_stack
-{
-	t_node		*head;
-	t_node		*tail;
-	size_t		len;
-};
-
-struct			s_ctrl
-{
-	t_stack		a;
-	t_stack		b;
-	size_t		len;
-};
-
-#endif
+	node = (t_node *)malloc(sizeof(t_node));
+	if (node == NULL)
+		return (NULL);
+	node->value = value;
+	node->index = index;
+	return (node);
+}
