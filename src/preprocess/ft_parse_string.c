@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 00:32:18 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/15 11:13:56 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/16 12:03:12 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static void	ft_arrcpy(int *dst, int *src, size_t len)
 	}
 }
 
-static t_bool	ft_alloc_arrays(t_ctrl *ctrl, int **array, int **array_sorted)
+static t_bool	ft_alloc_arrays(int len, int **array, int **array_sorted)
 {
-	*array = (int *)malloc(sizeof(int) * ctrl->len);
+	*array = (int *)malloc(sizeof(int) * len);
 	if (*array == NULL)
 		return (ft_error_msg(ERR_MALLOC_FAIL));
-	*array_sorted = (int *)malloc(sizeof(int) * ctrl->len);
+	*array_sorted = (int *)malloc(sizeof(int) * len);
 	if (*array_sorted == NULL)
 		return (ft_destroy_array(*array)
 			&& ft_error_msg(ERR_MALLOC_FAIL));
@@ -51,18 +51,14 @@ static void	ft_print_array(int *array, size_t len)
 	printf("\n");
 }
 
-t_bool	ft_parse_string(t_ctrl *ctrl, char *str, int **array,
+t_bool	ft_parse_string(t_ctrl *ctrl, char ***splits, int **array,
 int **array_sorted)
 {
-	char		**strs;
-
-	strs = ft_split(str, ' ');
-	if (strs == NULL)
+	ctrl->len = ft_splits_len(splits);
+	if (ft_alloc_arrays(ctrl->len, array, array_sorted))
 		return (fail);
-	ctrl->len = ft_strslen(strs);
-	if (ft_alloc_arrays(ctrl, array, array_sorted))
+	if (ft_atoi_array(splits, *array))
 		return (fail);
-	ft_atoi_array(strs, array, ctrl->len);
 	ft_arrcpy(*array_sorted, *array, ctrl->len);
 	if (ft_merge_sort_array(*array_sorted, ctrl->len) == fail)
 		return (fail);

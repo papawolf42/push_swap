@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   ft_validate_number.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 22:14:07 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 09:54:58 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/15 22:45:16 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/16 12:02:23 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#include "libft.h"
+#include "bool.h"
+#include "error.h"
 
-# include "structure.h"
-
-t_node	*ft_node_new(int value, size_t index);
-void    ft_stack_addback(t_stack *stack, t_node *node);
-
-#endif
+t_bool			ft_validate_number(char *str)
+{
+	if (*str != '\0' && (*str == '-' || *str == '+'))
+		str++;
+	while (*str)
+	{
+		if (ft_isdigit(*str) == false)
+			return (ft_error_msg(ERR_BAD_NUMBER));
+		str++;
+	}
+	return (success);
+}

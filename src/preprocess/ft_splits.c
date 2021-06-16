@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strslen.c                                       :+:      :+:    :+:   */
+/*   ft_splits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 01:45:37 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/04 01:50:00 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/15 20:09:26 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/16 11:59:47 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include "bool.h"
 
-size_t			ft_strslen(char **strs)
+char    ***ft_splits(int argc, char **argv)
 {
-	size_t		i;
+	char    ***splits;
+	size_t  i;
 
+	splits = (char ***)malloc(sizeof(char **) * (argc));
+	if (splits == NULL)
+		return (NULL);
+	splits[argc - 1] = NULL;
 	i = 0;
-	while (strs[i])
+	while (i < (size_t)(argc - 1))
+	{
+		splits[i] = ft_split(argv[i + 1], ' ');
+		if (splits[i] == NULL)
+			return (NULL);
 		i++;
-	return (i);
+	}
+	return (splits);
 }

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 08:10:19 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/10 21:46:04 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/16 12:19:58 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,3 @@ t_bool			ft_merge_sort_array(int *array, size_t len)
 	ft_destroy_array(temp);
 	return (success);
 }
-

@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/15 14:01:57 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/16 10:48:19 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,19 +80,22 @@ SRCS_ERROR := $(addprefix $(DIR_SRC_ERROR)/, \
 
 DIR_SRC_VALIDATE := validate
 SRCS_VALIDATE := $(addprefix $(DIR_SRC_VALIDATE)/, \
-	ft_validate_are_duplicate.c \
-	ft_validate_are_number.c \
+	ft_validate_duplicate.c \
+	ft_validate_number.c \
+	ft_validate_range.c \
 )
 
 DIR_SRC_PREPROCESS := preprocess
 SRCS_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 	$(SRCS_VALIDATE) \
 	ft_atoi_array.c \
+	ft_atoi_long.c \
 	ft_init_stack.c \
 	ft_merge_sort_array.c \
 	ft_parse_string.c \
 	ft_preprocess.c \
-	ft_strslen.c \
+	ft_splits_len.c \
+	ft_splits.c \
 )
 
 DIR_SRC_STACK := stack

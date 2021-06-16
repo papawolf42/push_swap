@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_are_duplicate.c                        :+:      :+:    :+:   */
+/*   ft_validate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 07:39:10 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/13 18:44:31 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/16 10:37:56 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/16 10:42:08 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <limits.h>
 #include "bool.h"
 #include "error.h"
-#include "structure.h"
 
-t_bool	ft_validate_are_duplicate(t_ctrl *ctrl, int *array)
+t_bool	ft_validate_range(long nbr)
 {
-	size_t		i;
-
-	i = 0;
-	if (ctrl->len <= 1)
-		return (success);
-	while (i < ctrl->len - 1)
-	{
-		if (array[i] == array[i + 1])
-			return (ft_destroy_array(array)
-				&& ft_error_msg(ERR_NUMBER_DUPLICATE));
-		i++;
-	}
+	if (INT_MAX < nbr || nbr < INT_MIN)
+		return (ft_error_msg(ERR_BAD_RANGE));
 	return (success);
 }

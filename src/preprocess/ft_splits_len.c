@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   ft_splits_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 22:14:07 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 09:54:58 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/04 01:45:37 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/15 20:20:19 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#include <stddef.h>
 
-# include "structure.h"
+size_t			ft_splits_len(char ***splits)
+{
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
-t_node	*ft_node_new(int value, size_t index);
-void    ft_stack_addback(t_stack *stack, t_node *node);
-
-#endif
+	len = 0;
+	i = 0;
+	while (splits[i])
+	{
+		j = 0;
+		while (splits[i][j])
+		{
+			len++;
+			j++;
+		}
+		i++;
+	}
+	return (len);
+}
