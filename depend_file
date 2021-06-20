@@ -1,0 +1,4 @@
+obj/checker.o: src/checker.c
+obj/push_swap.o: src/push_swap.c
+obj/simulator.o: src/simulator.c include/simulator.h include/bool.h \
+include/structure.h include/preprocess.h include/stack.h

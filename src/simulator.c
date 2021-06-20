@@ -6,10 +6,11 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:03:26 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 11:49:22 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 17:35:44 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "simulator.h"
 #include "preprocess.h"
 #include "stack.h"
@@ -19,7 +20,8 @@ int	main(int argc, char *argv[])
 	t_ctrl		ctrl;
 
 	(void)argc;
-	ft_preprocess(&ctrl, argc, argv);
+	if (ft_preprocess(&ctrl, argc, argv))
+		exit (0);
 	ft_print_init(&ctrl);
 	while (1)
 	{

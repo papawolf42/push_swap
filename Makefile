@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/19 22:59:20 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/20 13:36:49 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,8 @@ NAME_LIBFT  := $(DIR_LIBFT)/$(LIB_LIBFT)
 # =========================
 
 CC        := gcc
-CFLAGS    := -g
-# CFLAGS    := -g3 -fsanitize=address
+# CFLAGS    := -g
+CFLAGS    := -g3 -fsanitize=address
 CFLAGS    += -Wall
 CFLAGS    += -Wextra
 CFLAGS    += -Werror
@@ -68,7 +68,10 @@ DIR_SRC := src
 
 DIR_SRC_COMMAND := command
 SRCS_COMMAND := $(addprefix $(DIR_SRC_COMMAND)/, \
-	ft_cmd_s.c \
+	ft_cmd_p.c \
+	ft_cmd_s_1.c \
+	ft_cmd_s_2.c \
+	ft_jump_command_undo.c \
 	ft_jump_command.c \
 )
 

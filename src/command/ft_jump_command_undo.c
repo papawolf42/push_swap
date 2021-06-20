@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_jump_command.c                                  :+:      :+:    :+:   */
+/*   ft_jump_command_undo.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,21 +15,21 @@
 #include "structure.h"
 #include "command.h"
 
-t_bool	ft_jump_command(t_ctrl *ctrl, char *str)
+t_bool	ft_jump_command_undo(t_ctrl *ctrl, char *str)
 {
 	size_t					i;
 	static t_pft_command	pft_cmd[] = {
-		{"sa", 2, ft_sa},
-		{"sb", 2, ft_sb},
+		{"sa", 2, ft_sb},
+		{"sb", 2, ft_sa},
 		{"ss", 2, ft_ss},
-		{"pa", 2, ft_pa},
-		{"pb", 2, ft_pb},
-		// {"ra", 2, ft_cmd_ra},
-		// {"rb", 2, ft_cmd_rb},
-		// {"rr", 2, ft_cmd_rr},
-		// {"rra", 3, ft_cmd_rra},
-		// {"rrb", 3, ft_cmd_rrb},
-		// {"rrr", 3, ft_cmd_rrr},
+		{"pa", 2, ft_pb},
+		{"pb", 2, ft_pa},
+		// {"ra", 2, ft_cmd_rra},
+		// {"rb", 2, ft_cmd_rrb},
+		// {"rr", 2, ft_cmd_rrr},
+		// {"rra", 3, ft_cmd_ra},
+		// {"rrb", 3, ft_cmd_rb},
+		// {"rrr", 3, ft_cmd_rr},
 	};
 
 	i = 0;

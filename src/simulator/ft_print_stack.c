@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:48:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 10:05:19 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 16:52:40 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,19 @@ static size_t	ft_get_width(t_stack *stack)
 	return (width);
 }
 
-void	ft_print_stack_line_nbr(t_stack *stack, int width, size_t len)
+void	ft_print_stack_line_nbr_a(t_stack *stack, int width, size_t len)
+{
+	static t_node	*node;
+
+	if (node == NULL)
+		node = stack->head;
+	printf("%*d", width, node->value);
+	node = node->next;
+	if (len == 1)
+		node = NULL;
+}
+
+void	ft_print_stack_line_nbr_b(t_stack *stack, int width, size_t len)
 {
 	static t_node	*node;
 
@@ -81,21 +93,23 @@ void	ft_print_stack_line_nbr(t_stack *stack, int width, size_t len)
 }
 
 void	ft_print_stack_line(t_ctrl *ctrl, size_t len,
-			int width_a, int width_b)
+			int width)
 {
 	if (len <= ctrl->a.len)
-		ft_print_stack_line_nbr(&ctrl->a, width_a, len);
+		ft_print_stack_line_nbr_a(&ctrl->a, width, len);
+	else
+		printf("%.*s", width, "            ");
 	printf(" ");
 	if (len <= ctrl->b.len)
-		ft_print_stack_line_nbr(&ctrl->b, width_b, len);
+		ft_print_stack_line_nbr_b(&ctrl->b, width, len);
 	printf("\n");
 }
 
-void	ft_print_stack_name(int width_a, int width_b)
+void	ft_print_stack_name(int width)
 {
-	printf("%.*s %.*s\n", ft_max_int(width_a, 1), STR_DEVIDER_LINE,
-		ft_max_int(width_b, 1), STR_DEVIDER_LINE);
-	printf("%*s %*s\n", width_a, "a", width_b, "b");
+	printf("%.*s %.*s\n", ft_max_int(width, 1), STR_DEVIDER_LINE,
+		ft_max_int(width, 1), STR_DEVIDER_LINE);
+	printf("%*s %*s\n", width, "a", width, "b");
 }
 
 /*
@@ -107,20 +121,16 @@ void	ft_print_stack_name(int width_a, int width_b)
 */
 void	ft_print_stack(t_ctrl *ctrl)
 {
-	static int	width_a;
-	static int	width_b;
+	static int	width;
 	size_t		len;
 
-	if (width_a == 0 || width_b == 0)
-	{
-		width_a = ft_get_width(&ctrl->a);
-		width_b = ft_get_width(&ctrl->b);
-	}
+	if (width == 0)
+		width = ft_get_width(&ctrl->a);
 	len = ft_max_sizet(ctrl->a.len, ctrl->b.len);
 	while (len)
 	{
-		ft_print_stack_line(ctrl, len, width_a, width_b);
+		ft_print_stack_line(ctrl, len, width);
 		len--;
 	}
-	ft_print_stack_name(width_a, width_b);
+	ft_print_stack_name(width);
 }
