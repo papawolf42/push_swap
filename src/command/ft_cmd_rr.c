@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmd_r.c                                         :+:      :+:    :+:   */
+/*   ft_cmd_rr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 17:42:44 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 18:21:34 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 18:40:17 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,36 @@
 #include "bool.h"
 #include "structure.h"
 
-t_bool	ft_cmd_r(t_stack *stack)
+t_bool	ft_cmd_rr(t_stack *stack)
 {
 	if (stack->len == 0)
 	{
 		ft_putstr_fd("not enough node\n", 1);
 		return (fail);
 	}
-	stack->tail = stack->tail->before;
-	stack->head = stack->head->before;
+	stack->tail = stack->tail->next;
+	stack->head = stack->head->next;
 	return (success);
 }
 
-t_bool	ft_ra(t_ctrl *ctrl)
+t_bool	ft_rra(t_ctrl *ctrl)
 {
-	if (ft_cmd_r(&ctrl->a) == fail)
+	if (ft_cmd_rr(&ctrl->a) == fail)
 		return (fail);
 	return (success);
 }
 
-t_bool	ft_rb(t_ctrl *ctrl)
+t_bool	ft_rrb(t_ctrl *ctrl)
 {
-	if (ft_cmd_r(&ctrl->b) == fail)
+	if (ft_cmd_rr(&ctrl->b) == fail)
 		return (fail);
 	return (success);
 }
 
-t_bool	ft_rr(t_ctrl *ctrl)
+t_bool	ft_rrr(t_ctrl *ctrl)
 {
-	if (ft_ra(ctrl) == fail
-		|| ft_rb(ctrl) == fail)
+	if (ft_rra(ctrl) == fail
+		|| ft_rrb(ctrl) == fail)
 		return (fail);
 	return (success);
 }

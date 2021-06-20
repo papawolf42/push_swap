@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:23:09 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 17:41:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 18:23:10 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_bool	ft_jump_command_undo(t_ctrl *ctrl, char *str)
 		{"ss", 2, ft_ss},
 		{"pa", 2, ft_pb},
 		{"pb", 2, ft_pa},
-		// {"ra", 2, ft_cmd_rra},
-		// {"rb", 2, ft_cmd_rrb},
-		// {"rr", 2, ft_cmd_rrr},
-		// {"rra", 3, ft_cmd_ra},
-		// {"rrb", 3, ft_cmd_rb},
-		// {"rrr", 3, ft_cmd_rr},
+		{"ra", 2, ft_rra},
+		{"rb", 2, ft_rrb},
+		{"rr", 2, ft_rrr},
+		{"rra", 3, ft_ra},
+		{"rrb", 3, ft_rb},
+		{"rrr", 3, ft_rr},
 	};
 
 	i = 0;

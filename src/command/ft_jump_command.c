@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:23:09 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 17:41:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 18:35:57 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_bool	ft_jump_command(t_ctrl *ctrl, char *str)
 		{"ss", 2, ft_ss},
 		{"pa", 2, ft_pa},
 		{"pb", 2, ft_pb},
-		// {"ra", 2, ft_cmd_ra},
-		// {"rb", 2, ft_cmd_rb},
-		// {"rr", 2, ft_cmd_rr},
-		// {"rra", 3, ft_cmd_rra},
-		// {"rrb", 3, ft_cmd_rrb},
-		// {"rrr", 3, ft_cmd_rrr},
+		{"ra", 2, ft_ra},
+		{"rb", 2, ft_rb},
+		{"rr", 3, ft_rr},
+		{"rra", 3, ft_rra},
+		{"rrb", 3, ft_rrb},
+		{"rrr", 3, ft_rrr},
 	};
 
 	i = 0;

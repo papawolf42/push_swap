@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 00:32:18 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 12:03:12 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 18:40:32 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,6 @@ static t_bool	ft_alloc_arrays(int len, int **array, int **array_sorted)
 	return (success);
 }
 
-static void	ft_print_array(int *array, size_t len)
-{
-	size_t		i;
-
-	i = 0;
-	while (i < len)
-	{
-		printf("%d ", array[i]);
-		i++;
-	}
-	printf("\n");
-}
-
 t_bool	ft_parse_string(t_ctrl *ctrl, char ***splits, int **array,
 int **array_sorted)
 {
@@ -62,7 +49,5 @@ int **array_sorted)
 	ft_arrcpy(*array_sorted, *array, ctrl->len);
 	if (ft_merge_sort_array(*array_sorted, ctrl->len) == fail)
 		return (fail);
-	ft_print_array(*array, ctrl->len);
-	ft_print_array(*array_sorted, ctrl->len);
 	return (success);
 }
