@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/20 18:23:24 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/20 19:22:22 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,9 +120,15 @@ SRCS_STACK := $(addprefix $(DIR_SRC_STACK)/, \
 	ft_stack_addback.c \
 )
 
-SRCS := $(addprefix $(DIR_SRC)/, \
-	checker.c \
+SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC)/, \
 	push_swap.c \
+	$(SRCS_COMMAND) \
+	$(SRCS_ERROR) \
+	$(SRCS_PREPROCESS) \
+	$(SRCS_STACK) \
+)
+
+SRCS_SIMULATOR := $(addprefix $(DIR_SRC)/, \
 	simulator.c \
 	$(SRCS_COMMAND) \
 	$(SRCS_ERROR) \
@@ -148,7 +154,9 @@ vpath %.c \
 # object files
 # =========================
 
-OBJS := $(addprefix $(DIR_OBJ)/, $(notdir $(SRCS:.c=.o)))
+OBJS_PUSH_SWAP := $(addprefix $(DIR_OBJ)/, $(notdir $(SRCS_PUSH_SWAP:.c=.o)))
+OBJS_CHECKER   := $(addprefix $(DIR_OBJ)/, $(notdir $(SRCS_CHECKER:.c=.o)))
+OBJS_SIMULATOR := $(addprefix $(DIR_OBJ)/, $(notdir $(SRCS_SIMULATOR:.c=.o)))
 
 # =========================
 # dependency files
@@ -172,11 +180,11 @@ ERCR    := $(ER)$(CR)
 # rules
 # =========================
 
-.PHONY: all clean fclean re
+.PHONY: all bonus simulator clean fclean re
 
-all : $(NAME)
+all : $(PUSH_SWAP)
 
-bonus : $(NAME)
+bonus : $(PUSH_SWAP) $(CHECKER)
 
 clean :
 	@$(MAKE) clean -C $(DIR_LIBFT)
@@ -201,15 +209,15 @@ clean_depend :
 	@$(CC) $(INCLUDES) -MM $< | sed 's|^|$(DIR_OBJ)/|' | sed 's|$(DIR_OBJ)/  ||' >> depend_file
 
 $(PUSH_SWAP) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS) -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_PUSH_SWAP) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(PUSH_SWAP) !!$(LF)"
 
 $(CHECKER) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS) -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_CHECKER) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(CHECKER) !!$(LF)"
 
 $(SIMULATOR) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS) -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_SIMULATOR) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(SIMULATOR) !!$(LF)"
 
 $(DIR_OBJ) :
