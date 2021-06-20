@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/16 10:48:19 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/19 22:59:20 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,9 +66,10 @@ DIR_SRC := src
 # source files
 # =========================
 
-DIR_SRC_CONSOLE := console
-SRCS_CONSOLE := $(addprefix $(DIR_SRC_CONSOLE)/, \
-	ft_separate_line.c \
+DIR_SRC_COMMAND := command
+SRCS_COMMAND := $(addprefix $(DIR_SRC_COMMAND)/, \
+	ft_cmd_s.c \
+	ft_jump_command.c \
 )
 
 DIR_SRC_ERROR := error
@@ -98,8 +99,18 @@ SRCS_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 	ft_splits.c \
 )
 
+DIR_SRC_SIMULATOR := simulator
+SRCS_SIMULATOR := $(addprefix $(DIR_SRC_SIMULATOR)/, \
+	ft_print_devider_line.c \
+	ft_print_init.c \
+	ft_print_stack.c \
+	ft_process_command.c \
+	ft_validate_command.c \
+)
+
 DIR_SRC_STACK := stack
 SRCS_STACK := $(addprefix $(DIR_SRC_STACK)/, \
+	ft_check_end.c \
 	ft_node_new.c \
 	ft_stack_addback.c \
 )
@@ -108,9 +119,10 @@ SRCS := $(addprefix $(DIR_SRC)/, \
 	checker.c \
 	push_swap.c \
 	simulator.c \
-	$(SRCS_CONSOLE) \
+	$(SRCS_COMMAND) \
 	$(SRCS_ERROR) \
 	$(SRCS_PREPROCESS) \
+	$(SRCS_SIMULATOR) \
 	$(SRCS_STACK) \
 )
 
@@ -120,10 +132,11 @@ SRCS := $(addprefix $(DIR_SRC)/, \
 
 vpath %.c \
 	$(DIR_SRC) \
-	$(DIR_SRC)/$(DIR_SRC_CONSOLE) \
+	$(DIR_SRC)/$(DIR_SRC_COMMAND) \
 	$(DIR_SRC)/$(DIR_SRC_ERROR) \
 	$(DIR_SRC)/$(DIR_SRC_PREPROCESS) \
 	$(DIR_SRC)/$(DIR_SRC_PREPROCESS)/$(DIR_SRC_VALIDATE) \
+	$(DIR_SRC)/$(DIR_SRC_SIMULATOR) \
 	$(DIR_SRC)/$(DIR_SRC_STACK)
 
 # =========================

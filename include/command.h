@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simulator.c                                        :+:      :+:    :+:   */
+/*   command.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 00:03:26 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 11:49:22 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/17 14:16:10 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/19 13:11:52 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "simulator.h"
-#include "preprocess.h"
-#include "stack.h"
+#ifndef COMMAND_H
+# define COMMAND_H
 
-int	main(int argc, char *argv[])
-{
-	t_ctrl		ctrl;
+# include "bool.h"
+# include "structure.h"
 
-	(void)argc;
-	ft_preprocess(&ctrl, argc, argv);
-	ft_print_init(&ctrl);
-	while (1)
-	{
-		if (ft_check_end(&ctrl))
-			break ;
-		ft_print_devider_line();
-		ft_process_command(&ctrl);
-		ft_print_stack(&ctrl);
-	}
-	ft_print_devider_line();
-	return (true);
-}
+t_bool	ft_jump_command(t_ctrl *ctrl, char *str);
+
+t_bool	ft_cmd_s(t_stack *stack);
+t_bool	ft_cmd_sa(t_ctrl *ctrl);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 01:54:32 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 10:40:59 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/16 19:46:26 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 # include "bool.h"
 
-# define ERR_BAD_NUMBER "found not a number"
+# define ERR_BAD_NUMBER "non-number found"
 # define ERR_BAD_RANGE "number overlay int range"
 # define ERR_MALLOC_FAIL "allocating memory fails"
 # define ERR_NUMBER_DUPLICATE "numbers are duplicated"
+# define ERR_BAD_COMMAND "bad command found"
+
+# define ESC_ERASE_LEFT "\033[1K"
 
 
 t_bool			ft_error_msg(char *msg);

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   console.h                                          :+:      :+:    :+:   */
+/*   ft_check_end.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 17:42:44 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/03 18:27:13 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/16 15:21:17 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/16 15:27:28 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONSOLE_H
-# define CONSOLE_H
+#include "bool.h"
+#include "structure.h"
 
-# define STR_DEVIDER_LINE		"----------------------------------------"
+t_bool	ft_check_end(t_ctrl *ctrl)
+{
+	size_t	i;
+	t_node	*node;
 
-void			ft_print_devider_line(void);
-
-#endif
+	if (ctrl->a.len != ctrl->len)
+		return (false);
+	i = 0;
+	node = ctrl->a.head;
+	while (i < ctrl->len)
+	{
+		if (node->index != i)
+			return (false);
+		node = node->next;
+		i++;
+	}
+	return (true);
+}
