@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:21:17 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 15:27:28 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/21 17:56:40 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_bool	ft_check_end(t_ctrl *ctrl)
 	node = ctrl->a.head;
 	while (i < ctrl->len)
 	{
-		if (node->index != i)
+		if (node->index != i + 1)
 			return (false);
 		node = node->next;
 		i++;

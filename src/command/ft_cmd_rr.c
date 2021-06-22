@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 17:42:44 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 18:40:17 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/20 19:50:47 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_bool	ft_cmd_rr(t_stack *stack)
 		ft_putstr_fd("not enough node\n", 1);
 		return (fail);
 	}
-	stack->tail = stack->tail->next;
-	stack->head = stack->head->next;
+	stack->tail = stack->tail->before;
+	stack->head = stack->head->before;
 	return (success);
 }
 

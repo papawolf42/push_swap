@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:15:48 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 12:38:42 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/22 20:43:03 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_cmd_s_normal(t_stack *stack)
 	neck = stack->head->next;
 	stack->tail->next = neck;
 	stack->head->next = neck->next;
+	neck->next->before = stack->head;
 	stack->head->before = neck;
 	neck->before = stack->tail;
 	neck->next = stack->head;

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 21:24:35 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 09:54:58 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/21 13:51:54 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	ft_get_index(size_t i,int *array, int *array_sorted)
 	idx = 0;
 	while (array[i] != array_sorted[idx])
 		idx++;
-	return (idx);
+	return (idx + 1);
 }
 
 t_bool	ft_init_stack(t_ctrl *ctrl, int *array, int *array_sorted)

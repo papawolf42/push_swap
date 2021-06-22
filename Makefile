@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/20 19:22:22 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/20 19:53:58 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -208,15 +208,15 @@ clean_depend :
 %.d : %.c
 	@$(CC) $(INCLUDES) -MM $< | sed 's|^|$(DIR_OBJ)/|' | sed 's|$(DIR_OBJ)/  ||' >> depend_file
 
-$(PUSH_SWAP) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
+$(PUSH_SWAP) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS_PUSH_SWAP)
 	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_PUSH_SWAP) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(PUSH_SWAP) !!$(LF)"
 
-$(CHECKER) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
+$(CHECKER) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS_CHECKER)
 	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_CHECKER) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(CHECKER) !!$(LF)"
 
-$(SIMULATOR) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS)
+$(SIMULATOR) : $(DIR_OBJ) $(NAME_LIBFT) $(OBJS_SIMULATOR)
 	@$(CC) $(CFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJS_SIMULATOR) -o $@
 	@printf "$(ERCR)[$(NAME)] ✔️  Make $(SIMULATOR) !!$(LF)"
 

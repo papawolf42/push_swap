@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:37:57 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 18:26:37 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/21 17:10:49 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_wipe_and_print_command(t_ctrl *ctrl, char **split, int idx)
 
 t_bool	ft_process_command(t_ctrl *ctrl)
 {
-	char		buffer[100];
+	char		buffer[4096];
 	char		**split;
 	static int	i;
 
