@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/19 13:01:32 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/23 18:42:38 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 typedef struct s_ctrl			t_ctrl;
 typedef struct s_stack			t_stack;
 typedef struct s_node			t_node;
+
+typedef enum e_type				t_type;
 
 typedef struct s_pft_command	t_pft_command;
 
@@ -43,6 +45,12 @@ struct			s_ctrl
 	t_stack		a;
 	t_stack		b;
 	size_t		len;
+};
+
+enum			e_type
+{
+	a,
+	b
 };
 
 struct			s_pft_command

@@ -6,13 +6,14 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:48:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 16:52:40 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/23 17:13:27 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "structure.h"
 #include "simulator.h"
+#include "util.h"
 
 static size_t	ft_count_digit(long nbr)
 {
@@ -34,20 +35,6 @@ static size_t	ft_count_digit(long nbr)
 		digit++;
 	}
 	return (digit);
-}
-
-static size_t	ft_max_sizet(size_t a, size_t b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-static int	ft_max_int(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
 }
 
 static size_t	ft_get_width(t_stack *stack)

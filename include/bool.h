@@ -6,19 +6,21 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:51:04 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/03 19:09:40 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/23 18:42:47 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BOOL_H
 # define BOOL_H
 
-typedef enum
+typedef enum e_bool	t_bool;
+
+enum	e_bool
 {
 	false = 0,
 	true = 1,
 	success = 0,
 	fail = 1
-}	t_bool;
+};
 
 #endif

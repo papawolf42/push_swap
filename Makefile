@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/20 19:53:58 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/23 20:22:09 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,7 @@
 PUSH_SWAP   := push_swap
 CHECKER     := checker
 SIMULATOR   := simulator
-NAME        := $(SIMULATOR)
-# NAME        += $(PUSH_SWAP)
-# NAME        += $(CHECKER)
+NAME        := $(PUSH_SWAP)
 
 # =========================
 # library path
@@ -104,6 +102,16 @@ SRCS_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 	ft_splits.c \
 )
 
+DIR_SRC_SORT := sort
+SRCS_SORT := $(addprefix $(DIR_SRC_SORT)/, \
+	ft_sort_3.c \
+)
+
+DIR_SRC_PUSH_SWAP := push_swap
+SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC_PUSH_SWAP)/, \
+	$(SRCS_SORT) \
+)
+
 DIR_SRC_SIMULATOR := simulator
 SRCS_SIMULATOR := $(addprefix $(DIR_SRC_SIMULATOR)/, \
 	ft_print_devider_line.c \
@@ -120,11 +128,23 @@ SRCS_STACK := $(addprefix $(DIR_SRC_STACK)/, \
 	ft_stack_addback.c \
 )
 
+DIR_SRC_UTIL := util
+SRCS_UTIL := $(addprefix $(DIR_SRC_UTIL)/, \
+	ft_get_index_min.c \
+	ft_max_int.c \
+	ft_max_sizet.c \
+	ft_min_int.c \
+	ft_min_sizet.c \
+)
+
 SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC)/, \
 	push_swap.c \
 	$(SRCS_COMMAND) \
 	$(SRCS_ERROR) \
 	$(SRCS_PREPROCESS) \
+	$(SRCS_PUSH_SWAP) \
+	$(SRCS_SIMULATOR) \
+	$(SRCS_UTIL) \
 	$(SRCS_STACK) \
 )
 
@@ -134,6 +154,7 @@ SRCS_SIMULATOR := $(addprefix $(DIR_SRC)/, \
 	$(SRCS_ERROR) \
 	$(SRCS_PREPROCESS) \
 	$(SRCS_SIMULATOR) \
+	$(SRCS_UTIL) \
 	$(SRCS_STACK) \
 )
 
@@ -147,8 +168,11 @@ vpath %.c \
 	$(DIR_SRC)/$(DIR_SRC_ERROR) \
 	$(DIR_SRC)/$(DIR_SRC_PREPROCESS) \
 	$(DIR_SRC)/$(DIR_SRC_PREPROCESS)/$(DIR_SRC_VALIDATE) \
+	$(DIR_SRC)/$(DIR_SRC_PUSH_SWAP) \
+	$(DIR_SRC)/$(DIR_SRC_PUSH_SWAP)/$(DIR_SRC_SORT) \
 	$(DIR_SRC)/$(DIR_SRC_SIMULATOR) \
-	$(DIR_SRC)/$(DIR_SRC_STACK)
+	$(DIR_SRC)/$(DIR_SRC_STACK) \
+	$(DIR_SRC)/$(DIR_SRC_UTIL)
 
 # =========================
 # object files

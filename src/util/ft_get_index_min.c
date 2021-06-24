@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_get_index_min.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 00:01:46 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/23 20:09:24 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/23 17:03:25 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/23 20:12:18 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "structure.h"
-#include "preprocess.h"
-#include "simulator.h"
-#include "push_swap.h"
-// #include "stack.h"
+#include "util.h"
 
-int	main(int argc, char *argv[])
+size_t	ft_get_index_min(t_node *node, size_t size)
 {
-	t_ctrl	ctrl;
+	size_t	min;
 
-	if (ft_preprocess(&ctrl, argc, argv))
-		exit (0);
-	ft_sort_3(&ctrl, a, ctrl.a.head);
-	ft_print_stack(&ctrl);
-	return (true);
+	min = node->index;
+	while (size--)
+	{
+		min = ft_min_sizet(min, node->index);
+		node = node->next;
+	}
+	return (min);
 }
