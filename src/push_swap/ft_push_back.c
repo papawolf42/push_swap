@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmd_s_1.c                                       :+:      :+:    :+:   */
+/*   ft_push_back_from_up.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 11:51:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 11:30:25 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/24 23:02:32 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/25 10:55:16 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bool.h"
 #include "structure.h"
 #include "command.h"
-#include "simulator.h"
 
-t_bool	ft_sa(t_ctrl *ctrl)
+void	ft_push_back(t_ctrl *ctrl, t_type stack, size_t count)
 {
-	if (ft_cmd_s(&ctrl->a) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
-}
-
-t_bool	ft_sb(t_ctrl *ctrl)
-{
-	if (ft_cmd_s(&ctrl->b) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
-}
-
-t_bool	ft_ss(t_ctrl *ctrl)
-{
-	if (ft_sa(ctrl) == fail
-		|| ft_sb(ctrl) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
+	if (stack == a)
+	{
+		while (count--)
+			ft_pa(ctrl);
+	}
+	else if (stack == b)
+	{
+		while (count--)
+			ft_pb(ctrl);
+	}
 }

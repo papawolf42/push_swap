@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmd_s_1.c                                       :+:      :+:    :+:   */
+/*   ft_sort_less_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/20 11:51:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 11:30:25 by gunkim           ###   ########.fr       */
+/*   Created: 2021/06/25 09:24:19 by gunkim            #+#    #+#             */
+/*   Updated: 2021/06/25 11:04:00 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bool.h"
 #include "structure.h"
+#include "push_swap.h"
 #include "command.h"
-#include "simulator.h"
 
-t_bool	ft_sa(t_ctrl *ctrl)
+void	ft_sort_less_3(t_ctrl *ctrl, t_type stack, size_t size)
 {
-	if (ft_cmd_s(&ctrl->a) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
-}
-
-t_bool	ft_sb(t_ctrl *ctrl)
-{
-	if (ft_cmd_s(&ctrl->b) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
-}
-
-t_bool	ft_ss(t_ctrl *ctrl)
-{
-	if (ft_sa(ctrl) == fail
-		|| ft_sb(ctrl) == fail)
-		return (fail);
-	ft_print_stack(ctrl);
-	return (success);
+	if (size == 3)
+		ft_sort_3(ctrl, stack);
+	if (size == 2)
+	{
+		if (stack == a && ctrl->a.head->index > ctrl->a.head->next->index)
+			ft_sa(ctrl);
+		else if (stack == b && ctrl->b.head->index < ctrl->b.head->next->index)
+			ft_sb(ctrl);
+	}
 }

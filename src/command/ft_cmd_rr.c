@@ -6,13 +6,14 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 17:42:44 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 19:50:47 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/25 11:55:18 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "bool.h"
 #include "structure.h"
+#include "simulator.h"
 
 t_bool	ft_cmd_rr(t_stack *stack)
 {
@@ -30,6 +31,7 @@ t_bool	ft_rra(t_ctrl *ctrl)
 {
 	if (ft_cmd_rr(&ctrl->a) == fail)
 		return (fail);
+	ft_print_stack(ctrl);
 	return (success);
 }
 
@@ -37,6 +39,7 @@ t_bool	ft_rrb(t_ctrl *ctrl)
 {
 	if (ft_cmd_rr(&ctrl->b) == fail)
 		return (fail);
+	ft_print_stack(ctrl);
 	return (success);
 }
 

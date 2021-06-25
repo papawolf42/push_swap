@@ -6,13 +6,14 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 13:06:43 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 17:41:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/25 11:30:09 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "bool.h"
 #include "structure.h"
+#include "simulator.h"
 
 void	ft_cmd_p_normal(t_stack *dst, t_stack *src)
 {
@@ -62,6 +63,7 @@ t_bool	ft_pb(t_ctrl *ctrl)
 {
 	if (ft_cmd_p(&ctrl->b, &ctrl->a) == fail)
 		return (fail);
+	ft_print_stack(ctrl);
 	return (success);
 }
 
@@ -69,5 +71,6 @@ t_bool	ft_pa(t_ctrl *ctrl)
 {
 	if (ft_cmd_p(&ctrl->a, &ctrl->b) == fail)
 		return (fail);
+	ft_print_stack(ctrl);
 	return (success);
 }

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:48:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/23 17:13:27 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/25 11:32:38 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ void	ft_print_stack_name(int width)
 	printf("%.*s %.*s\n", ft_max_int(width, 1), STR_DEVIDER_LINE,
 		ft_max_int(width, 1), STR_DEVIDER_LINE);
 	printf("%*s %*s\n", width, "a", width, "b");
+	printf(STR_DEVIDER_LINE);
+	printf("\n");
 }
 
 /*

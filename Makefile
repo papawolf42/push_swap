@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/23 20:22:09 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/25 11:11:28 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,11 +105,16 @@ SRCS_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 DIR_SRC_SORT := sort
 SRCS_SORT := $(addprefix $(DIR_SRC_SORT)/, \
 	ft_sort_3.c \
+	ft_sort_less_3.c \
 )
 
 DIR_SRC_PUSH_SWAP := push_swap
 SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC_PUSH_SWAP)/, \
 	$(SRCS_SORT) \
+	ft_get_head_from_stack.c \
+	ft_push_back.c \
+	ft_push_two_third.c \
+	ft_select_pivot.c \
 )
 
 DIR_SRC_SIMULATOR := simulator
