@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/26 15:02:02 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/26 17:41:28 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,10 +113,12 @@ SRCS_SORT := $(addprefix $(DIR_SRC_SORT)/, \
 DIR_SRC_PUSH_SWAP := push_swap
 SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC_PUSH_SWAP)/, \
 	$(SRCS_SORT) \
+	ft_combine_command.c \
 	ft_get_head_from_stack.c \
 	ft_print_commands.c \
 	ft_push_back.c \
 	ft_push_two_third.c \
+	ft_push_two_thrid_without_reverse.c \
 	ft_select_pivot.c \
 )
 

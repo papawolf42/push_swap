@@ -6,10 +6,11 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:14:05 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 10:47:46 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 20:16:13 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "structure.h"
 #include "command.h"
 #include "util.h"
@@ -21,6 +22,27 @@
 피봇 2보다 작으면 rb로 down하고,
 피봇 2보다 크면 up에 남겨둠.
 */
+
+void	ft_reverse_stacks(t_ctrl *ctrl, t_wstack which_stack,
+			size_t hold_down, size_t push_up)
+{
+	int		count;
+
+	count = ft_min_sizet(hold_down, push_up);
+	while (count--)
+		ft_rrr(ctrl);
+	count = hold_down - push_up;
+	while (count)
+	{
+		if ((which_stack == a && count > 0 && count--)
+			|| (which_stack == b && count < 0 && count++))
+			ft_rra(ctrl);
+		else if ((which_stack == a && count < 0 && count++)
+			|| (which_stack == b && count > 0 && count--))
+			ft_rrb(ctrl);
+	}
+}
+
 void	ft_push_two_third_a(t_ctrl *ctrl, t_parts *parts, t_node *node)
 {
 	int		count;
@@ -47,23 +69,7 @@ void	ft_push_two_third_a(t_ctrl *ctrl, t_parts *parts, t_node *node)
 		}
 		node = temp;
 	}
-	count = ft_min_sizet(parts->hold_down.count, parts->push_up.count);
-	while (count--)
-		ft_rrr(ctrl);
-	count = parts->hold_down.count - parts->push_up.count;
-	while (count)
-	{
-		if (count > 0)
-		{
-			ft_rra(ctrl);
-			count--;
-		}
-		else if (count < 0)
-		{
-			ft_rrb(ctrl);
-			count++;
-		}
-	}
+	ft_reverse_stacks(ctrl, a, parts->hold_down.count, parts->push_up.count);
 }
 
 void	ft_push_two_third_b(t_ctrl *ctrl, t_parts *parts, t_node *node)
@@ -92,23 +98,7 @@ void	ft_push_two_third_b(t_ctrl *ctrl, t_parts *parts, t_node *node)
 		}
 		node = temp;
 	}
-	count = ft_min_sizet(parts->hold_down.count, parts->push_up.count);
-	while (count--)
-		ft_rrr(ctrl);
-	count = parts->hold_down.count - parts->push_up.count;
-	while (count)
-	{
-		if (count > 0)
-		{
-			ft_rrb(ctrl);
-			count--;
-		}
-		else if (count < 0)
-		{
-			ft_rra(ctrl);
-			count++;
-		}
-	}
+	ft_reverse_stacks(ctrl, b, parts->hold_down.count, parts->push_up.count);
 }
 
 void	ft_push_two_third(t_ctrl *ctrl, t_wstack stack, t_parts *parts)
