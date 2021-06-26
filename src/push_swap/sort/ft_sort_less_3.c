@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 09:24:19 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 11:04:00 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 12:18:42 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include "command.h"
 
-void	ft_sort_less_3(t_ctrl *ctrl, t_type stack, size_t size)
+void	ft_sort_less_3(t_ctrl *ctrl, t_wstack stack, size_t size)
 {
 	if (size == 3)
 		ft_sort_3(ctrl, stack);

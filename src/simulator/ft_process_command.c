@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:37:57 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/21 17:10:49 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 13:00:13 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ t_bool	ft_process_command(t_ctrl *ctrl)
 			}
 			if (i == -1)
 				continue ;
-			ft_destroy_splits(split);
+			ft_destroy_split(split);
 			break ;
 		}
-		ft_destroy_splits(split);
+		ft_destroy_split(split);
 	}
 	return (success);
 }

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 17:42:44 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 11:55:24 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 13:53:09 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "bool.h"
 #include "structure.h"
 #include "simulator.h"
+#include "command.h"
 
 t_bool	ft_cmd_r(t_stack *stack)
 {
@@ -31,7 +32,7 @@ t_bool	ft_ra(t_ctrl *ctrl)
 {
 	if (ft_cmd_r(&ctrl->a) == fail)
 		return (fail);
-	ft_print_stack(ctrl);
+	ft_cmd_addback(ctrl, ra);
 	return (success);
 }
 
@@ -39,7 +40,7 @@ t_bool	ft_rb(t_ctrl *ctrl)
 {
 	if (ft_cmd_r(&ctrl->b) == fail)
 		return (fail);
-	ft_print_stack(ctrl);
+	ft_cmd_addback(ctrl, rb);
 	return (success);
 }
 

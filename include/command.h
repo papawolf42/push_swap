@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:16:10 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 18:22:26 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 12:17:32 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ t_bool	ft_rra(t_ctrl *ctrl);
 t_bool	ft_rrb(t_ctrl *ctrl);
 t_bool	ft_rrr(t_ctrl *ctrl);
 t_bool	ft_cmd_rr(t_stack *stack);
+
+t_bool	ft_cmd_addback(t_ctrl *ctrl, t_wcmd cmd);
 
 #endif

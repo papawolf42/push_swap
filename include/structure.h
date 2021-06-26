@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 20:07:56 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 15:02:28 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 # include "bool.h"
 
 typedef struct s_ctrl			t_ctrl;
-typedef struct s_command		t_cmd;
-typedef struct s_commands		t_cmds;
+
 typedef struct s_stack			t_stack;
+typedef enum e_which_stack		t_wstack;
 typedef struct s_node			t_node;
 
-typedef enum e_type				t_type;
+typedef struct s_command		t_cmd;
+typedef struct s_commands		t_cmds;
+typedef enum e_which_command	t_wcmd;
 
 typedef struct s_pft_command	t_pft_command;
 
@@ -45,10 +47,32 @@ struct			s_stack
 	size_t		len;
 };
 
+enum			e_which_stack
+{
+	a,
+	b
+};
+
+enum			e_which_command
+{
+	sa,
+	sb,
+	ss,
+	pa,
+	pb,
+	ra,
+	rb,
+	rr,
+	rra,
+	rrb,
+	rrr
+};
+
 struct			s_command
 {
-	char		*cmd;
+	t_wcmd		cmd;
 	t_cmd		*next;
+	t_cmd		*before;
 };
 
 struct			s_commands
@@ -63,12 +87,7 @@ struct			s_ctrl
 	t_stack		a;
 	t_stack		b;
 	size_t		len;
-};
-
-enum			e_type
-{
-	a,
-	b
+	t_cmds		cmds;
 };
 
 struct			s_pft_command
@@ -80,7 +99,7 @@ struct			s_pft_command
 
 struct			s_partition
 {
-	t_type		stack;
+	t_wstack	stack;
 	t_node		*head;
 	size_t		size;
 	size_t		count;

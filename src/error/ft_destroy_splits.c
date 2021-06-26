@@ -6,23 +6,24 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 01:55:19 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/04 02:00:45 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 13:00:31 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "bool.h"
+#include "error.h"
 
-t_bool			ft_destroy_splits(char **strs)
+t_bool	ft_destroy_splits(char ***splits)
 {
 	size_t		i;
 
 	i = 0;
-	while (strs[i])
+	while (splits[i])
 	{
-		free(strs[i]);
+		ft_destroy_split(splits[i]);
 		i++;
 	}
-	free(strs);
+	free(splits);
 	return (fail);
 }

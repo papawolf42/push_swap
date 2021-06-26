@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 00:32:18 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/20 18:40:32 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 10:12:43 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int **array_sorted)
 	if (ft_alloc_arrays(ctrl->len, array, array_sorted))
 		return (fail);
 	if (ft_atoi_array(splits, *array))
-		return (fail);
+		return (ft_destroy_array(*array) && ft_destroy_array(*array_sorted));
 	ft_arrcpy(*array_sorted, *array, ctrl->len);
 	if (ft_merge_sort_array(*array_sorted, ctrl->len) == fail)
-		return (fail);
+		return (ft_destroy_array(*array) && ft_destroy_array(*array_sorted));
 	return (success);
 }

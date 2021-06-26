@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/25 11:11:28 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/26 15:02:02 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ DIR_SRC := src
 
 DIR_SRC_COMMAND := command
 SRCS_COMMAND := $(addprefix $(DIR_SRC_COMMAND)/, \
+	ft_cmd_addback.c \
 	ft_cmd_p.c \
 	ft_cmd_rr.c \
 	ft_cmd_r.c \
@@ -78,6 +79,7 @@ SRCS_COMMAND := $(addprefix $(DIR_SRC_COMMAND)/, \
 DIR_SRC_ERROR := error
 SRCS_ERROR := $(addprefix $(DIR_SRC_ERROR)/, \
 	ft_destroy_array.c \
+	ft_destroy_split.c \
 	ft_destroy_splits.c \
 	ft_error_msg.c \
 )
@@ -112,6 +114,7 @@ DIR_SRC_PUSH_SWAP := push_swap
 SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC_PUSH_SWAP)/, \
 	$(SRCS_SORT) \
 	ft_get_head_from_stack.c \
+	ft_print_commands.c \
 	ft_push_back.c \
 	ft_push_two_third.c \
 	ft_select_pivot.c \

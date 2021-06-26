@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:14:05 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 20:43:58 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 10:47:46 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	ft_push_two_third_b(t_ctrl *ctrl, t_parts *parts, t_node *node)
 	}
 }
 
-void	ft_push_two_third(t_ctrl *ctrl, t_type stack, t_parts *parts)
+void	ft_push_two_third(t_ctrl *ctrl, t_wstack stack, t_parts *parts)
 {
 	if (stack == a)
 		ft_push_two_third_a(ctrl, parts, ctrl->a.head);

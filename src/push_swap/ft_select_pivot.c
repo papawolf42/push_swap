@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 16:46:03 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 18:19:00 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 10:47:46 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size가 3이라면 종료조건이므로 애초에 이곳에 들어오지 않음
 만약에 101이다? 그러면 33 34 34가 되야할 것임.
 그럼 1 ~ 33, 34 ~ 67, 68 ~ 101이 될 것임. 즉 2라면, 
 */
-void	ft_select_pivot(t_ctrl *ctrl, t_type stack, t_parts *parts, size_t size)
+void	ft_select_pivot(t_ctrl *ctrl, t_wstack stack, t_parts *parts, size_t size)
 {
 	size_t	div;
 	size_t	mod;

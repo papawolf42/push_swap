@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:01:46 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/25 20:08:40 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/26 13:12:44 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "push_swap.h"
 // #include "stack.h"
 
-void	ft_recursive_push_swap(t_ctrl *ctrl, t_type stack, size_t size)
+void	ft_recursive_push_swap(t_ctrl *ctrl, t_wstack stack, size_t size)
 {
 	t_parts	parts;
 
@@ -43,8 +43,8 @@ int	main(int argc, char *argv[])
 
 	if (ft_preprocess(&ctrl, argc, argv))
 		exit (0);
-	ft_print_stack(&ctrl);
 	ft_recursive_push_swap(&ctrl, a, ctrl.len);
-	ft_print_stack(&ctrl);
+	// ft_print_stack(&ctrl);
+	ft_print_commands(&ctrl, ctrl.cmds.len);
 	return (true);
 }
