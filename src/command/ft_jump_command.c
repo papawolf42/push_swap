@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:23:09 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 21:33:53 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 00:41:44 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 #include "bool.h"
 #include "structure.h"
 #include "command.h"
-
-// static t_bool	ft_success(t_ctrl *ctrl)
-// {
-// 	(void)ctrl;
-// 	return (success);
-// }
 
 static int	ft_strncmp_custom(const char *s1, const char *s2)
 {

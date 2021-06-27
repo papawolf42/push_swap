@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:01:46 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 21:35:30 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 00:56:31 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "preprocess.h"
 #include "simulator.h"
 #include "push_swap.h"
-// #include "stack.h"
 
 void	ft_ignite_recursive_push_swap(t_ctrl *ctrl, t_wstack stack, size_t size)
 {
@@ -24,7 +23,7 @@ void	ft_ignite_recursive_push_swap(t_ctrl *ctrl, t_wstack stack, size_t size)
 
 	if (size <= 3)
 	{
-		ft_sort_less_3(ctrl, stack, size);
+		ft_sort_less_3_at_first(ctrl, stack, size);
 		return ;
 	}
 	ft_bzero(&parts, sizeof(parts));

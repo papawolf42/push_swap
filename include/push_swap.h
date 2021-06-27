@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 12:40:06 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 17:26:55 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 00:55:24 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	ft_recursive_push_swap(t_ctrl *ctrl, t_wstack stack, size_t size);
 
 void	ft_sort_3(t_ctrl *ctrl, t_wstack stack);
 void	ft_sort_less_3(t_ctrl *ctrl, t_wstack stack, size_t size);
+
+void	ft_sort_3_at_first(t_ctrl *ctrl, t_wstack stack);
+void	ft_sort_less_3_at_first(t_ctrl *ctrl, t_wstack stack, size_t size);
 
 void	ft_select_pivot(t_ctrl *ctrl, t_wstack stack, t_parts *parts,
 			size_t size);

@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/28 00:15:06 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/28 00:54:41 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,6 +113,7 @@ SRC_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 
 DIR_SRC_SORT := sort
 SRC_SORT := $(addprefix $(DIR_SRC_SORT)/, \
+	ft_sort_3_at_first.c \
 	ft_sort_3.c \
 	ft_sort_less_3.c \
 )
