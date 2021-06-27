@@ -6,17 +6,17 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 20:09:26 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 11:59:47 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:48:21 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "bool.h"
 
-char    ***ft_splits(int argc, char **argv)
+char	***ft_splits(int argc, char **argv)
 {
-	char    ***splits;
-	size_t  i;
+	char	***splits;
+	size_t	i;
 
 	splits = (char ***)malloc(sizeof(char **) * (argc));
 	if (splits == NULL)

@@ -6,67 +6,66 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 08:10:19 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/16 12:19:58 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:43:25 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "structure.h"
 #include "libft.h"
 #include "bool.h"
 #include "error.h"
 
-static void		ft_merge_sort(int start, int end, int *arr, int *temp)
+static void		ft_merge_sorting(t_var_merge_sort *v, int *arr, int *temp)
 {
-	int		i;
-	int		left;
-	int		right;
-	int		half;
-	int		last;
-
-	i = 0;
-	left = start;
-	right = start + (end - start + 1) / 2;
-	half = right;
-	last = end + 1;
-	while (i < end - start + 1)
+	while (v->i < v->end - v->start + 1)
 	{
-		if (left < half && right < last)
+		if (v->left < v->half && v->right < v->last)
 		{
-			if (arr[left] > arr[right])
+			if (arr[v->left] > arr[v->right])
 			{
-				temp[start + i] = arr[right];
-				right++;
+				temp[v->start + v->i] = arr[v->right];
+				v->right++;
 			}
 			else
 			{
-				temp[start + i] = arr[left];
-				left++;
+				temp[v->start + v->i] = arr[v->left];
+				v->left++;
 			}
 		}
-		else if (left >= half)
-		{
-			temp[start + i] = arr[right];
-			right++;
-		}
-		else if (right >= last)
-		{
-			temp[start + i] = arr[left];
-			left++;
-		}
-		i++;
+		else if (v->left >= v->half)
+			temp[v->start + v->i] = arr[v->right++];
+		else if (v->right >= v->last)
+			temp[v->start + v->i] = arr[v->left++];
+		v->i++;
 	}
-	while (i--)
+}
+
+static void		ft_merge_sort(int start, int end, int *arr, int *temp)
+{
+	t_var_merge_sort	v;
+
+	v.i = 0;
+	v.start = start;
+	v.end = end;
+	v.left = v.start;
+	v.right = v.start + (v.end - v.start + 1) / 2;
+	v.half = v.right;
+	v.last = v.end + 1;
+	ft_merge_sorting(&v, arr, temp);
+	while (v.i--)
 	{
-		arr[start] = temp[start];
-		start++;
+		arr[v.start] = temp[v.start];
+		v.start++;
 	}
 }
 
 static void		ft_recursive_merge_sort(int start, int end, int *arr, int *temp)
 {
-	if (end - start >= 2) // 8 - 0 + 1 >= 4, 3 - 0 + 1 >= 4
+	if (end - start >= 2)
 	{
-		ft_recursive_merge_sort(start, start + (end - start + 1) / 2 - 1, arr, temp);// (0, 3), (0, 1) (4, 5)
-		ft_recursive_merge_sort(start + (end - start + 1) / 2, end, arr, temp);//(2, 3), (4, 8), (6, 8)
+		ft_recursive_merge_sort(start, start + (end - start + 1) / 2 - 1,
+			arr, temp);
+		ft_recursive_merge_sort(start + (end - start + 1) / 2, end, arr, temp);
 	}
 	ft_merge_sort(start, end, arr, temp);
 }

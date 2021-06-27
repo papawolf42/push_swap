@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/28 00:54:41 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/28 01:30:12 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,6 @@ SRC_ERROR := $(addprefix $(DIR_SRC_ERROR)/, \
 	ft_destroy_split.c \
 	ft_destroy_splits.c \
 	ft_error_msg.c \
-	ft_exit.c \
 )
 
 DIR_SRC_VALIDATE := validate
@@ -342,8 +341,6 @@ obj/ft_destroy_splits.o: src/error/ft_destroy_splits.c include/bool.h \
 include/error.h include/structure.h
 obj/ft_error_msg.o: src/error/ft_error_msg.c lib/libft/include/libft.h \
 include/bool.h
-obj/ft_exit.o: src/error/ft_exit.c include/structure.h include/bool.h \
-include/error.h
 obj/ft_validate_duplicate.o: src/preprocess/validate/ft_validate_duplicate.c \
 include/bool.h include/error.h include/structure.h
 obj/ft_validate_number.o: src/preprocess/validate/ft_validate_number.c \

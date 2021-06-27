@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:23:09 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 21:33:45 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:27:01 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_strncmp_custom(const char *s1, const char *s2)
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
 
-t_bool	ft_jump_command_undo(t_ctrl *ctrl, char *str)
+t_bool		ft_jump_command_undo(t_ctrl *ctrl, char *str)
 {
 	size_t					i;
 	static t_pft_command	pft_cmd[] = {

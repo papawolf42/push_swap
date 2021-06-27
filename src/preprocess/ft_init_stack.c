@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 21:24:35 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/21 13:51:54 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:44:29 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "bool.h"
 #include "error.h"
 
-static size_t	ft_get_index(size_t i,int *array, int *array_sorted)
+static size_t	ft_get_index(size_t i, int *array, int *array_sorted)
 {
 	size_t	idx;
 
@@ -27,7 +27,7 @@ static size_t	ft_get_index(size_t i,int *array, int *array_sorted)
 	return (idx + 1);
 }
 
-t_bool	ft_init_stack(t_ctrl *ctrl, int *array, int *array_sorted)
+t_bool			ft_init_stack(t_ctrl *ctrl, int *array, int *array_sorted)
 {
 	size_t	i;
 	size_t	idx;

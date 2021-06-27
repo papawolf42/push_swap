@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 21:33:59 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:38:14 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_pft_command	t_pft_command;
 
 typedef struct s_partitions		t_parts;
 typedef struct s_partition		t_part;
+
+typedef struct s_var_merge_sort	t_var_merge_sort;
 
 enum			e_which_program
 {
@@ -124,6 +126,17 @@ struct			s_partitions
 	t_part		push_up;
 	size_t		pivot_2;
 	t_part		push_down;
+};
+
+struct			s_var_merge_sort
+{
+	int			i;
+	int			start;
+	int			end;
+	int			left;
+	int			right;
+	int			half;
+	int			last;
 };
 
 #endif

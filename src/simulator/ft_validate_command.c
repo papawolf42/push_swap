@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:20:34 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/19 13:12:33 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:56:28 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static t_bool	ft_validate_command_each(char *s)
 		return (false);
 }
 
-t_bool	ft_validate_command(char **split)
+t_bool			ft_validate_command(char **split)
 {
 	size_t	i;
 

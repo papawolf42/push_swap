@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:03:26 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:11:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:30:37 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char *argv[])
 	ft_bzero(&ctrl, sizeof(ctrl));
 	ctrl.prog = simulator;
 	if (ft_preprocess(&ctrl, argc, argv))
-		ft_exit(&ctrl);
+		exit(1);
 	ft_print_init(&ctrl);
 	while (1)
 	{

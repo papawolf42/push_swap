@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 19:14:05 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 20:16:13 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:50:03 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 #include "structure.h"
 #include "command.h"
 #include "util.h"
-
-/*
-피봇 1보다 작으면 ra로 hold하고,
-피봇 1보다 크면 pb로 넘김.
-이때 넘긴 수 중에
-피봇 2보다 작으면 rb로 down하고,
-피봇 2보다 크면 up에 남겨둠.
-*/
 
 void	ft_reverse_stacks(t_ctrl *ctrl, t_wstack which_stack,
 			size_t hold_down, size_t push_up)

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 01:54:32 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 16:59:51 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:30:41 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ t_bool			ft_error_msg(char *msg);
 t_bool			ft_destroy_splits(char ***splits);
 t_bool			ft_destroy_split(char **strs);
 t_bool			ft_destroy_array(int *array);
-
-int				ft_exit(t_ctrl *ctrl);
 
 #endif

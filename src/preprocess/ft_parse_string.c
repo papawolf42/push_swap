@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 00:32:18 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 10:12:43 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:45:55 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "error.h"
 #include "preprocess.h"
 
-static void	ft_arrcpy(int *dst, int *src, size_t len)
+static void		ft_arrcpy(int *dst, int *src, size_t len)
 {
 	while (len--)
 	{
@@ -33,12 +33,11 @@ static t_bool	ft_alloc_arrays(int len, int **array, int **array_sorted)
 		return (ft_error_msg(ERR_MALLOC_FAIL));
 	*array_sorted = (int *)malloc(sizeof(int) * len);
 	if (*array_sorted == NULL)
-		return (ft_destroy_array(*array)
-			&& ft_error_msg(ERR_MALLOC_FAIL));
+		return (ft_destroy_array(*array) && ft_error_msg(ERR_MALLOC_FAIL));
 	return (success);
 }
 
-t_bool	ft_parse_string(t_ctrl *ctrl, char ***splits, int **array,
+t_bool			ft_parse_string(t_ctrl *ctrl, char ***splits, int **array,
 int **array_sorted)
 {
 	ctrl->len = ft_splits_len(splits);

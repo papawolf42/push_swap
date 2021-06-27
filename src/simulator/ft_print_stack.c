@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:48:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:10:38 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 01:55:49 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static size_t	ft_get_width(t_stack *stack)
 	return (width);
 }
 
-void	ft_print_stack_line_nbr_a(t_stack *stack, int width, size_t len)
+void			ft_print_stack_line_nbr_a(t_stack *stack, int width, size_t len)
 {
 	static t_node	*node;
 
@@ -67,7 +67,7 @@ void	ft_print_stack_line_nbr_a(t_stack *stack, int width, size_t len)
 		node = NULL;
 }
 
-void	ft_print_stack_line_nbr_b(t_stack *stack, int width, size_t len)
+void			ft_print_stack_line_nbr_b(t_stack *stack, int width, size_t len)
 {
 	static t_node	*node;
 
@@ -79,7 +79,7 @@ void	ft_print_stack_line_nbr_b(t_stack *stack, int width, size_t len)
 		node = NULL;
 }
 
-void	ft_print_stack_line(t_ctrl *ctrl, size_t len,
+void			ft_print_stack_line(t_ctrl *ctrl, size_t len,
 			int width)
 {
 	if (len <= ctrl->a.len)
@@ -92,7 +92,7 @@ void	ft_print_stack_line(t_ctrl *ctrl, size_t len,
 	printf("\n");
 }
 
-void	ft_print_stack_name(int width)
+void			ft_print_stack_name(int width)
 {
 	printf("%.*s %.*s\n", ft_max_int(width, 1), STR_DEVIDER_LINE,
 		ft_max_int(width, 1), STR_DEVIDER_LINE);
@@ -102,14 +102,7 @@ void	ft_print_stack_name(int width)
 	printf("\n");
 }
 
-/*
-일단 2가지를 제야함,
-1. 전체 높이 max_len, stack a와 b의 len 중 큰 것을 선택
-2. 각 스텍의 최대 폭을 제야함. a와 b를 각각의 len만큼 돌면서,
-	이 값은 매번 돌 필요 없이, 밖에서 한번만 재면 될듯.
-3. 여기서 각 스텍의 최대 폭은 리턴되어 printf의 width로 들어감. 왼쪽 정렬하면 좋을 듯.
-*/
-void	ft_print_stack(t_ctrl *ctrl)
+void			ft_print_stack(t_ctrl *ctrl)
 {
 	static int	width;
 	size_t		len;
