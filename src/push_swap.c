@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:01:46 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 20:07:21 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/27 21:35:30 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	main(int argc, char *argv[])
 	t_ctrl	ctrl;
 
 	ft_bzero(&ctrl, sizeof(ctrl));
+	ctrl.prog = push_swap;
 	if (ft_preprocess(&ctrl, argc, argv))
 		exit (0);
 	ft_ignite_recursive_push_swap(&ctrl, a, ctrl.len);

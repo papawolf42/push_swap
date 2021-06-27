@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:31:11 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 15:02:28 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/27 21:33:59 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stddef.h>
 # include "structure.h"
 # include "bool.h"
+
+typedef enum e_which_program	t_prog;
 
 typedef struct s_ctrl			t_ctrl;
 
@@ -31,6 +33,13 @@ typedef struct s_pft_command	t_pft_command;
 
 typedef struct s_partitions		t_parts;
 typedef struct s_partition		t_part;
+
+enum			e_which_program
+{
+	push_swap,
+	checker,
+	simulator
+};
 
 struct			s_node
 {
@@ -88,12 +97,12 @@ struct			s_ctrl
 	t_stack		b;
 	size_t		len;
 	t_cmds		cmds;
+	t_prog		prog;
 };
 
 struct			s_pft_command
 {
 	char		key[4];
-	size_t		len;
 	t_bool		(*ft_command)(t_ctrl *ctrl);
 };
 

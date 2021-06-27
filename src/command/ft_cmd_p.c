@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 13:06:43 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 12:17:17 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/27 21:36:39 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_cmd_p_normal(t_stack *dst, t_stack *src)
 	}
 }
 
-t_bool	ft_cmd_p(t_stack *dst, t_stack *src)
+t_bool	ft_cmd_p(t_stack *dst, t_stack *src, t_prog prog)
 {
 	if (src->len >= 1)
 	{
@@ -52,7 +52,7 @@ t_bool	ft_cmd_p(t_stack *dst, t_stack *src)
 		dst->len++;
 		src->len--;
 	}
-	else if (src->len < 1)
+	else if (src->len < 1 && prog == simulator)
 	{
 		ft_putstr_fd("not enough node\n", 1);
 		return (fail);
@@ -62,7 +62,7 @@ t_bool	ft_cmd_p(t_stack *dst, t_stack *src)
 
 t_bool	ft_pb(t_ctrl *ctrl)
 {
-	if (ft_cmd_p(&ctrl->b, &ctrl->a) == fail)
+	if (ft_cmd_p(&ctrl->b, &ctrl->a, ctrl->prog) == fail)
 		return (fail);
 	ft_cmd_addback(ctrl, pb);
 	return (success);
@@ -70,7 +70,7 @@ t_bool	ft_pb(t_ctrl *ctrl)
 
 t_bool	ft_pa(t_ctrl *ctrl)
 {
-	if (ft_cmd_p(&ctrl->a, &ctrl->b) == fail)
+	if (ft_cmd_p(&ctrl->a, &ctrl->b, ctrl->prog) == fail)
 		return (fail);
 	ft_cmd_addback(ctrl, pa);
 	return (success);

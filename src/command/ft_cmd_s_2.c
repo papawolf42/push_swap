@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 14:15:48 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/22 20:43:03 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/27 21:33:25 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	ft_cmd_s_normal(t_stack *stack)
 	stack->head = neck;
 }
 
-t_bool	ft_cmd_s(t_stack *stack)
+t_bool	ft_cmd_s(t_stack *stack, t_prog prog)
 {
 	if (stack->len >= 3)
 		ft_cmd_s_normal(stack);
 	else if (stack->len == 2)
 		ft_cmd_s_2(stack);
-	else if (stack->len < 1)
+	else if (stack->len < 1 && prog == simulator)
 	{
 		ft_putstr_fd("not enough node\n", 1);
 		return (fail);

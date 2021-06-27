@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 11:51:59 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/26 11:00:31 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/27 21:33:02 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 t_bool	ft_sa(t_ctrl *ctrl)
 {
-	if (ft_cmd_s(&ctrl->a) == fail)
+	if (ft_cmd_s(&ctrl->a, ctrl->prog) == fail)
 		return (fail);
 	ft_cmd_addback(ctrl, sa);
 	return (success);
@@ -25,7 +25,7 @@ t_bool	ft_sa(t_ctrl *ctrl)
 
 t_bool	ft_sb(t_ctrl *ctrl)
 {
-	if (ft_cmd_s(&ctrl->b) == fail)
+	if (ft_cmd_s(&ctrl->b, ctrl->prog) == fail)
 		return (fail);
 	ft_cmd_addback(ctrl, sb);
 	return (success);
