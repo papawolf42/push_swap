@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:02:45 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:30:20 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 15:14:32 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int		main(int argc, char *argv[])
 	t_ctrl	ctrl;
 	t_bool	bool;
 
+	if (argc == 1)
+		return (1);
 	ft_bzero(&ctrl, sizeof(ctrl));
 	ctrl.prog = checker;
 	if (ft_preprocess(&ctrl, argc, argv))

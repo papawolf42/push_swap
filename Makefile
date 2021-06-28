@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
+#    By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/28 02:37:43 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/28 15:16:38 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -260,7 +260,7 @@ clean :
 fclean :
 	@$(MAKE) fclean -C $(DIR_LIBFT)
 	@$(MAKE) fclean -C $(DIR_GET_NEXT_LINE)
-	@$(RM) $(RFLAGS) $(NAME) $(OBJS)
+	@$(RM) $(RFLAGS) $(OBJS) $(PUSH_SWAP) $(CHECKER) $(SIMULATOR) 
 	@printf "[$(NAME)] ✔️  Cleaned all !!$(LF)"
 
 re : fclean all
