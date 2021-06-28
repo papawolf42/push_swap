@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 19:23:09 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:27:04 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 15:19:53 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ t_bool		ft_jump_command(t_ctrl *ctrl, char *str)
 	while ((i < 11)
 		&& (ft_strncmp_custom(str, pft_cmd[i].key) != 0))
 		i++;
-	if (i == 11 && *str)
+	if (i == 11)
 		return (fail);
-	else if (i == 11)
-		return (success);
 	return (pft_cmd[i].ft_command(ctrl));
 }
