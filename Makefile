@@ -6,7 +6,7 @@
 #    By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/28 01:30:12 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/28 02:37:43 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ NAME_GET_NEXT_LINE  := $(DIR_GET_NEXT_LINE)/$(LIB_GET_NEXT_LINE)
 # =========================
 
 CC        := gcc
-# CFLAGS    := -g
-CFLAGS    := -g3 -fsanitize=address
+CFLAGS    := -g
+# CFLAGS    := -g3 -fsanitize=address
 CFLAGS    += -Wall
 CFLAGS    += -Wextra
 CFLAGS    += -Werror
@@ -112,7 +112,9 @@ SRC_PREPROCESS := $(addprefix $(DIR_SRC_PREPROCESS)/, \
 
 DIR_SRC_SORT := sort
 SRC_SORT := $(addprefix $(DIR_SRC_SORT)/, \
+	ft_sort_3_a.c \
 	ft_sort_3_at_first.c \
+	ft_sort_3_b.c \
 	ft_sort_3.c \
 	ft_sort_less_3.c \
 )
@@ -161,7 +163,6 @@ SRCS_PUSH_SWAP := $(addprefix $(DIR_SRC)/, \
 	$(SRC_ERROR) \
 	$(SRC_PREPROCESS) \
 	$(SRC_PUSH_SWAP) \
-	$(SRC_SIMULATOR) \
 	$(SRC_STACK) \
 	$(SRC_UTIL) \
 )
@@ -181,7 +182,6 @@ SRCS_SIMULATOR := $(addprefix $(DIR_SRC)/, \
 	$(SRC_COMMAND) \
 	$(SRC_ERROR) \
 	$(SRC_PREPROCESS) \
-	$(SRC_SIMULATOR) \
 	$(SRC_STACK) \
 	$(SRC_UTIL) \
 )

@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:01:46 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:52:23 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 02:37:09 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "libft.h"
 #include "structure.h"
 #include "preprocess.h"
-#include "simulator.h"
 #include "push_swap.h"
 #include "error.h"
 

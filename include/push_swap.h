@@ -6,7 +6,7 @@
 /*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 12:40:06 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:52:42 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 02:20:23 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include "structure.h"
 
-void	ft_sort_3(t_ctrl *ctrl, t_wstack stack);
 void	ft_sort_less_3(t_ctrl *ctrl, t_wstack stack, size_t size);
+void	ft_sort_3(t_ctrl *ctrl, t_wstack stack);
+void	ft_sort_3_a(t_ctrl *ctrl, t_node *head);
+void	ft_sort_3_b(t_ctrl *ctrl, t_node *head);
 
-void	ft_sort_3_at_first(t_ctrl *ctrl, t_wstack stack);
 void	ft_sort_less_3_at_first(t_ctrl *ctrl, t_wstack stack, size_t size);
+void	ft_sort_3_at_first(t_ctrl *ctrl, t_wstack stack);
 
 void	ft_select_pivot(t_ctrl *ctrl, t_wstack stack, t_parts *parts,
 			size_t size);
