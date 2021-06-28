@@ -6,7 +6,7 @@
 #    By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/04 00:28:28 by gunkim            #+#    #+#              #
-#    Updated: 2021/06/28 15:16:38 by gunkim           ###   ########.fr        #
+#    Updated: 2021/06/28 17:04:04 by gunkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -182,6 +182,7 @@ SRCS_SIMULATOR := $(addprefix $(DIR_SRC)/, \
 	$(SRC_COMMAND) \
 	$(SRC_ERROR) \
 	$(SRC_PREPROCESS) \
+	$(SRC_SIMULATOR) \
 	$(SRC_STACK) \
 	$(SRC_UTIL) \
 )

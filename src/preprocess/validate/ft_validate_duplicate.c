@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validate_duplicate.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 07:39:10 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:47:38 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:54:56 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_bool	ft_validate_duplicate(t_ctrl *ctrl, int *array)
 		if (array[i] == array[i + 1])
 		{
 			return (ft_destroy_array(array)
-				&& ft_error_msg(ERR_NUMBER_DUPLICATE));
+				&& ft_error_msg(ERR_NUMBER_DUPLICATE, ctrl->prog));
 		}
 		i++;
 	}

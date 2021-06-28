@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 01:54:32 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:30:41 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:51:42 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 # define ESC_ERASE_LEFT "\033[1K"
 
-t_bool			ft_error_msg(char *msg);
+t_bool			ft_error_msg(char *msg, t_prog prog);
 
 t_bool			ft_destroy_splits(char ***splits);
 t_bool			ft_destroy_split(char **strs);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 00:32:18 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:45:55 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 17:03:09 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static t_bool	ft_alloc_arrays(int len, int **array, int **array_sorted)
 {
 	*array = (int *)malloc(sizeof(int) * len);
 	if (*array == NULL)
-		return (ft_error_msg(ERR_MALLOC_FAIL));
+		return (fail);
 	*array_sorted = (int *)malloc(sizeof(int) * len);
 	if (*array_sorted == NULL)
-		return (ft_destroy_array(*array) && ft_error_msg(ERR_MALLOC_FAIL));
+		return (ft_destroy_array(*array));
 	return (success);
 }
 
@@ -43,7 +43,7 @@ int **array_sorted)
 	ctrl->len = ft_splits_len(splits);
 	if (ft_alloc_arrays(ctrl->len, array, array_sorted))
 		return (fail);
-	if (ft_atoi_array(splits, *array))
+	if (ft_atoi_array(splits, *array, ctrl->prog))
 		return (ft_destroy_array(*array) && ft_destroy_array(*array_sorted));
 	ft_arrcpy(*array_sorted, *array, ctrl->len);
 	if (ft_merge_sort_array(*array_sorted, ctrl->len) == fail)

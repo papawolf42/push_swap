@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   preprocess.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 18:31:56 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/19 12:39:06 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:59:49 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	***ft_splits(int argc, char **argv);
 t_bool	ft_parse_string(t_ctrl *ctrl, char ***splits, int **array,
 			int **array_sorted);
 size_t	ft_splits_len(char ***splits);
-t_bool	ft_atoi_array(char ***splits, int *array);
+t_bool	ft_atoi_array(char ***splits, int *array, t_prog prog);
 long	ft_atoi_long(const char *nstr);
 
 t_bool	ft_merge_sort_array(int *array, size_t len);

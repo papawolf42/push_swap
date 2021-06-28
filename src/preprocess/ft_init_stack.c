@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 21:24:35 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:44:29 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:53:56 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_bool			ft_init_stack(t_ctrl *ctrl, int *array, int *array_sorted)
 		idx = ft_get_index(i, array, array_sorted);
 		node = ft_node_new(array[i], idx);
 		if (node == NULL)
-			return (ft_error_msg(ERR_MALLOC_FAIL));
+			return (ft_error_msg(ERR_MALLOC_FAIL, ctrl->prog));
 		ft_stack_addback(&ctrl->a, node);
 		i++;
 	}

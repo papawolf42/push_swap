@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_merge_sort_array.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 08:10:19 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 01:43:25 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:56:13 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_bool			ft_merge_sort_array(int *array, size_t len)
 
 	temp = (int *)malloc(sizeof(int) * len);
 	if (temp == NULL)
-		return (ft_error_msg(ERR_MALLOC_FAIL));
+		return (fail);
 	ft_bzero(temp, sizeof(int) * len);
 	ft_recursive_merge_sort(0, len - 1, array, temp);
 	ft_destroy_array(temp);

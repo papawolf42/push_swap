@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 00:02:45 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/28 15:23:03 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:53:41 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_bool	ft_receive_and_execute(t_ctrl *ctrl)
 		if (rtn == GNL_FAIL)
 			return (fail);
 		if (ft_jump_command(ctrl, line) == fail)
-			return (ft_error_msg(NULL));
+			return (ft_error_msg(NULL, ctrl->prog));
 		free(line);
 	}
 	free(line);

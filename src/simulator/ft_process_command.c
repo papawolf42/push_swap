@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_process_command.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gunkim <gunkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: gunkim <papawolf@kakao.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 15:37:57 by gunkim            #+#    #+#             */
-/*   Updated: 2021/06/27 21:34:37 by gunkim           ###   ########.fr       */
+/*   Updated: 2021/06/28 16:55:33 by gunkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_bool	ft_process_command(t_ctrl *ctrl)
 		scanf(" %[^\n]", buffer);
 		split = ft_split(buffer, ' ');
 		if (split == NULL)
-			return (ft_error_msg(ERR_MALLOC_FAIL));
+			return (ft_error_msg(ERR_MALLOC_FAIL, ctrl->prog));
 		if (ft_validate_command(split) == true)
 		{
 			ft_wipe_and_print_command(ctrl, split, i);
